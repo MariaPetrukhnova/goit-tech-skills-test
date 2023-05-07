@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/goit-techSkills-test/static/css/main.e6c13ad2.css",
+    "main.js": "/goit-techSkills-test/static/js/main.4e41929c.js",
+    "static/js/318.ee83f68a.chunk.js": "/goit-techSkills-test/static/js/318.ee83f68a.chunk.js",
+    "static/css/704.7251c1b8.chunk.css": "/goit-techSkills-test/static/css/704.7251c1b8.chunk.css",
+    "static/js/704.080f448e.chunk.js": "/goit-techSkills-test/static/js/704.080f448e.chunk.js",
+    "static/media/bgx2.png": "/goit-techSkills-test/static/media/bgx2.2bdca439e1ee32db9691.png",
+    "index.html": "/goit-techSkills-test/index.html",
+    "main.e6c13ad2.css.map": "/goit-techSkills-test/static/css/main.e6c13ad2.css.map",
+    "main.4e41929c.js.map": "/goit-techSkills-test/static/js/main.4e41929c.js.map",
+    "318.ee83f68a.chunk.js.map": "/goit-techSkills-test/static/js/318.ee83f68a.chunk.js.map",
+    "704.7251c1b8.chunk.css.map": "/goit-techSkills-test/static/css/704.7251c1b8.chunk.css.map",
+    "704.080f448e.chunk.js.map": "/goit-techSkills-test/static/js/704.080f448e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4e41929c.js"
+  ]
+}
