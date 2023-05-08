@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/goit-techSkills-test/static/css/main.e6c13ad2.css",
-    "main.js": "/goit-techSkills-test/static/js/main.7765f5c8.js",
+    "main.js": "/goit-techSkills-test/static/js/main.826376e3.js",
     "static/js/318.ee83f68a.chunk.js": "/goit-techSkills-test/static/js/318.ee83f68a.chunk.js",
     "static/css/704.7251c1b8.chunk.css": "/goit-techSkills-test/static/css/704.7251c1b8.chunk.css",
-    "static/js/704.080f448e.chunk.js": "/goit-techSkills-test/static/js/704.080f448e.chunk.js",
+    "static/js/704.6dc361f4.chunk.js": "/goit-techSkills-test/static/js/704.6dc361f4.chunk.js",
     "static/media/bgx2.png": "/goit-techSkills-test/static/media/bgx2.2bdca439e1ee32db9691.png",
     "index.html": "/goit-techSkills-test/index.html",
     "main.e6c13ad2.css.map": "/goit-techSkills-test/static/css/main.e6c13ad2.css.map",
-    "main.7765f5c8.js.map": "/goit-techSkills-test/static/js/main.7765f5c8.js.map",
+    "main.826376e3.js.map": "/goit-techSkills-test/static/js/main.826376e3.js.map",
     "318.ee83f68a.chunk.js.map": "/goit-techSkills-test/static/js/318.ee83f68a.chunk.js.map",
     "704.7251c1b8.chunk.css.map": "/goit-techSkills-test/static/css/704.7251c1b8.chunk.css.map",
-    "704.080f448e.chunk.js.map": "/goit-techSkills-test/static/js/704.080f448e.chunk.js.map"
+    "704.6dc361f4.chunk.js.map": "/goit-techSkills-test/static/js/704.6dc361f4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.7765f5c8.js"
+    "static/js/main.826376e3.js"
   ]
 }
