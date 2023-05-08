@@ -1,6 +1,8 @@
 import css from './Card.module.css';
 import logo from '../images/Logox2.png';
 import Btn from "../Btn";
+import PropTypes from 'prop-types';
+
 
 export default function Card({userId, userName, userTweets, userFollowers, userAvatar, updateStatusFunc, isFollowed}) {
   const handleClick = (e) => {
@@ -42,3 +44,12 @@ export default function Card({userId, userName, userTweets, userFollowers, userA
   )
 }
  
+Card.propTypes = {
+    userId: PropTypes.string,
+    userName: PropTypes.string,
+    userTweets: PropTypes.number,
+    userFollowers: PropTypes.number,
+    userAvatar: PropTypes.string,
+    updateStatusFunc: PropTypes.func,
+    isFollowed: PropTypes.bool,
+}

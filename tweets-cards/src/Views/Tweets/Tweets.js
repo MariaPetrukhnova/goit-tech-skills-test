@@ -3,26 +3,47 @@ import apiHandler from "../../services/apiHandler";
 import Card from "../../components/Card/Card";
 import { Link, useLocation } from "react-router-dom";
 import css from './Tweets.module.css'
+import Filter from "../../components/Filter";
 
 const LOCALSTORAGE_KEY = 'followings';
 const perPage = 3;
 
 const Tweets = () => {
+    //let visibleCards = [];
     const [usersArr, setUsersArr] = useState([]);
     let [page, setPage] = useState(null);
-    const pageOutput = useMemo(() => usersArr?.slice(0, (page + 1) * perPage) || [], [usersArr, page]);
+    const [followings, setFollowings] = useState([]);
+    const [filterValue, setFilterValue] = useState('all');
+    const filterResult = useMemo(() => {
+        if (filterValue === 'all') {
+            return [...usersArr];
+        }
+
+        const res = [];
+        usersArr.forEach((item) => {
+            const statement = filterValue === 'following' ? followings.includes(item.id) : !followings.includes(item.id)
+
+            if (statement) {
+                res.push(item)
+            }
+        })
+
+        return [...res]
+    }, [filterValue, followings, usersArr]);
+    const pageOutput = useMemo(() => filterResult?.slice(0, (page + 1) * perPage) || [], [filterResult, page]);
     const [changedUser, setChangedUser] = useState({});
     const location = useLocation();
     const backLink = useRef(location.state?.from ?? '/');
-    const [followings, setFollowings] = useState([]);
+    
+
 
     useEffect(() => {
         if (page === null) {
-            setPage(page => page = 0)
+            setPage(page => page = 0);
             apiHandler()
                 .then(res => {
-                    const followingsStorage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY) || '[]')
-                    setFollowings(followings => followings = [...followingsStorage])
+                    const followingsStorage = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY) || '[]');
+                    setFollowings(followings => followings = [...followingsStorage]);
                     const newUsersArr = res.map(({ id, name, tweets, followers, avatar }) => {
                         return { id, name, tweets, followers, avatar }
                     });
@@ -48,13 +69,17 @@ const Tweets = () => {
         }
     }, [changedUser, usersArr])
 
+    useEffect(() => {
+        setPage(page => page = 0)
+    }, [filterValue])
+
     const handleLoadMore = (e) => {
         e.preventDefault();
         setPage(page => page += 1)
     };
 
     function updateStatusData({ user, status }) {
-        const res = [...followings]
+        const res = [...followings];
 
         if (status) {
             res.push(user.id)
@@ -67,11 +92,18 @@ const Tweets = () => {
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(res));
     };
 
+    function handleChange(value) {
+        console.log(value);
+        setFilterValue(filterValue => filterValue = value);    
+    };
+
+
     return (
         <div className={css.Tweets_container}>
             <div className={css.Tweets_textBox}>
                 <Link to={backLink.current} className={css.Tweets_backBtn}>{String.fromCharCode(9664)}Back to home</Link>
                 <h2 className={css.Tweets_title}>Tweets cards:</h2> 
+                <Filter handleFilter={(value) => handleChange(value)} />
             </div>
             <ul className={css.Tweets_listGrid}>
                 {pageOutput && pageOutput.map(({id, name, tweets, followers, avatar}) => (
@@ -85,7 +117,7 @@ const Tweets = () => {
                             userAvatar={avatar}
                             updateStatusFunc={({ user, status }) => updateStatusData({ user, status })}
                         />
-                    </li>))} 
+                    </li>))}
             </ul>
             {(pageOutput.length-(perPage*page)>=3)&&<button className={css.Tweets_loadmore} onClick={handleLoadMore}>Load more</button>}
         </div>

@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export default function Btn({ Click, btnLabel, btnType }) {
     if (!btnType) {
@@ -47,3 +47,8 @@ export default function Btn({ Click, btnLabel, btnType }) {
 
 };
 
+Btn.propTypes = {
+    btnLabel: PropTypes.string,
+    Click: PropTypes.func,
+    btnType: PropTypes.bool,
+}

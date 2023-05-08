@@ -1,19 +1,39 @@
 
-import React from 'react';
 import PropTypes from 'prop-types';
-import css from './Filter.module.css';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
-const Filter = ({ value, onChange }) => {
-    return (
-        <label className={css.filter_label}> Find tweets by status
-            <input className={css.filter_input} type='text' value={value} onChange={onChange}/>
-        </label>
+
+const Filter = ({ handleFilter }) => {
+    const options = [ 'all', 'following', 'unfollowing' ];
+    const defaultOption = options[0];
+    let filter = '';
+
+    const onSelect = (e) => {
+        filter = e.value;
+        handleFilter(filter);
+    };
+
+    return (<>
+        <Dropdown
+            options={options}
+            onChange={(e) => onSelect(e)}
+            value={defaultOption}
+            className='myClassName'
+            placeholder="Select an option"
+            placeholderClassName='myPlaceholderClassName'
+            controlClassName='myControlClassName'
+            menuClassName='myMenuClassName'
+        />
+    </> 
     )
 }
 
 Filter.propTypes = {
-    value: PropTypes.string,
-    onChange: PropTypes.func,
+    handleFilter: PropTypes.func,
 }
 
 export default Filter;
+
+
+
