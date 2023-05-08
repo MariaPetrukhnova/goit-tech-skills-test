@@ -12,7 +12,6 @@ const perPage = 3;
 
 const Tweets = () => {
     const [usersArr, setUsersArr] = useState([]);
-    //const [pageOutput, setPageOutput] = useState([]);
     let [page, setPage] = useState(null);
     const pageOutput = useMemo(() => usersArr?.slice(0, (page + 1) * perPage) || [], [usersArr, page]);
     const [changedUser, setChangedUser] = useState({});
@@ -30,10 +29,7 @@ const Tweets = () => {
                     const newUsersArr = res.map(({ id, name, tweets, followers, avatar }) => {
                         return { id, name, tweets, followers, avatar }
                     });
-                    console.log(newUsersArr);
                     setUsersArr(usersArr => usersArr = [...newUsersArr]);
-                    console.log(usersArr);
-                    //setPageOutput(pageOutput => pageOutput = [...newUsersArr.slice(0, (page + 1) * perPage)]);
                 })
                 .catch(error => new Error(`Something goes wrong: ${error}`))
         }
@@ -52,14 +48,12 @@ const Tweets = () => {
                 return usersArr = [ ...res ]
             })
             setChangedUser(changedUser => changedUser = {})
-            //setPageOutput(pageOutput => pageOutput = [...usersArr.slice(0, (page + 1) * perPage)]);
         }
     }, [changedUser, usersArr])
 
     const handleLoadMore = (e) => {
         e.preventDefault();
         setPage(page => page += 1)
-        //setPageOutput(pageOutput => pageOutput = [...usersArr.slice(0, (page + 1) * perPage)]);
     };
 
     function updateStatusData({ user, status }) {
@@ -74,15 +68,6 @@ const Tweets = () => {
         setChangedUser(changedUser => changedUser = { ...user });
         setFollowings(followings => followings = [...res]);
         localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(res));
-        // console.log(value.id);
-        // console.log(followingsUsersArr);
-        // if (followingStatusArr.map(item => item.id).includes(value.id)) {
-        //     setFollowingStatusArr(currentStatusArr => [...currentStatusArr.filter(item => item.id !== value.id), value]);
-        // } else {
-        //     followingStatusArr.push(value);
-        //     console.log(followingStatusArr);
-        // }
-        // localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(followingStatusArr));
     };
 
     return (
@@ -105,7 +90,7 @@ const Tweets = () => {
                         />
                     </li>))} 
             </ul>
-            <button className={css.Tweets_loadmore} onClick={handleLoadMore}>Load more</button>
+            {(pageOutput.length-(perPage*page)>=3)&&<button className={css.Tweets_loadmore} onClick={handleLoadMore}>Load more</button>}
         </div>
     )
 };
