@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef, useMemo } from "react";
 import apiHandler from "../../services/apiHandler";
 import Card from "../../components/Card/Card";
@@ -7,8 +6,6 @@ import css from './Tweets.module.css'
 
 const LOCALSTORAGE_KEY = 'followings';
 const perPage = 3;
-
-
 
 const Tweets = () => {
     const [usersArr, setUsersArr] = useState([]);
