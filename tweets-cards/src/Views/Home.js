@@ -1,4 +1,4 @@
-import bg from '../components/images/bgx2.png'
+import bg from '.././images/bgx2.png'
 
 export default function Home() {
     return (

@@ -1,5 +1,5 @@
 import css from './Card.module.css';
-import logo from '../images/Logox2.png';
+import logo from '../../images/Logox2.png';
 import Btn from "../Btn";
 import PropTypes from 'prop-types';
 

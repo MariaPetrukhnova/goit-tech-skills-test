@@ -16,25 +16,20 @@ const Tweets = () => {
     const filterResult = useMemo(() => {
         if (filterValue === 'all') {
             return [...usersArr];
-        }
-
+        };
         const res = [];
         usersArr.forEach((item) => {
             const statement = filterValue === 'following' ? followings.includes(item.id) : !followings.includes(item.id)
-
             if (statement) {
-                res.push(item)
+                res.push(item);
             }
-        })
-
-        return [...res]
+        });
+        return [...res];
     }, [filterValue, followings, usersArr]);
     const pageOutput = useMemo(() => filterResult?.slice(0, (page + 1) * perPage) || [], [filterResult, page]);
     const [changedUser, setChangedUser] = useState({});
     const location = useLocation();
     const backLink = useRef(location.state?.from ?? '/');
-    
-
 
     useEffect(() => {
         if (page === null) {
@@ -57,11 +52,9 @@ const Tweets = () => {
             setUsersArr(usersArr => {
                 const res = [...usersArr];
                 const ind = res.findIndex((item) => item.id === changedUser.id)
-                
                 if (ind !== -1) {
                     res[ind] = { ...changedUser }
                 }
-
                 return usersArr = [ ...res ]
             })
             setChangedUser(changedUser => changedUser = {})
@@ -79,7 +72,6 @@ const Tweets = () => {
 
     function updateStatusData({ user, status }) {
         const res = [...followings];
-
         if (status) {
             res.push(user.id)
         } else {
@@ -95,7 +87,6 @@ const Tweets = () => {
         console.log(value);
         setFilterValue(filterValue => filterValue = value);    
     };
-
 
     return (
         <div className={css.Tweets_container}>
