@@ -9,7 +9,6 @@ const LOCALSTORAGE_KEY = 'followings';
 const perPage = 3;
 
 const Tweets = () => {
-    //let visibleCards = [];
     const [usersArr, setUsersArr] = useState([]);
     let [page, setPage] = useState(null);
     const [followings, setFollowings] = useState([]);
