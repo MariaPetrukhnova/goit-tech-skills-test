@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goit-techSkills-test/static/css/main.74007b7e.css",
-    "main.js": "/goit-techSkills-test/static/js/main.2b591148.js",
+    "main.js": "/goit-techSkills-test/static/js/main.395c5784.js",
     "static/js/674.3fd54cd7.chunk.js": "/goit-techSkills-test/static/js/674.3fd54cd7.chunk.js",
-    "static/css/485.b5bf2766.chunk.css": "/goit-techSkills-test/static/css/485.b5bf2766.chunk.css",
+    "static/css/485.b11d811c.chunk.css": "/goit-techSkills-test/static/css/485.b11d811c.chunk.css",
     "static/js/485.422e8bc8.chunk.js": "/goit-techSkills-test/static/js/485.422e8bc8.chunk.js",
     "static/media/bgx2.png": "/goit-techSkills-test/static/media/bgx2.2bdca439e1ee32db9691.png",
     "static/media/montserrat-latin-700italic.woff": "/goit-techSkills-test/static/media/montserrat-latin-700italic.6779372f04095051c62e.woff",
@@ -44,13 +44,13 @@
     "static/media/montserrat-latin-100.woff2": "/goit-techSkills-test/static/media/montserrat-latin-100.8d7d79679b70dbe27172.woff2",
     "index.html": "/goit-techSkills-test/index.html",
     "main.74007b7e.css.map": "/goit-techSkills-test/static/css/main.74007b7e.css.map",
-    "main.2b591148.js.map": "/goit-techSkills-test/static/js/main.2b591148.js.map",
+    "main.395c5784.js.map": "/goit-techSkills-test/static/js/main.395c5784.js.map",
     "674.3fd54cd7.chunk.js.map": "/goit-techSkills-test/static/js/674.3fd54cd7.chunk.js.map",
-    "485.b5bf2766.chunk.css.map": "/goit-techSkills-test/static/css/485.b5bf2766.chunk.css.map",
+    "485.b11d811c.chunk.css.map": "/goit-techSkills-test/static/css/485.b11d811c.chunk.css.map",
     "485.422e8bc8.chunk.js.map": "/goit-techSkills-test/static/js/485.422e8bc8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.74007b7e.css",
-    "static/js/main.2b591148.js"
+    "static/js/main.395c5784.js"
   ]
 }
