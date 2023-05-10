@@ -44,6 +44,10 @@
     border: none;
 }
 
+.Tweets_loadmore:hover {
+    background: #d1b5ee;
+}
+
 .Tweets_listGrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
